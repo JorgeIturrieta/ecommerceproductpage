@@ -1,0 +1,59 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    //Desktop font size
+    // 10px/16px = 0.625% *100% = 62.5%  => then 1rem = 10px
+    font-size: 62.5%;
+}
+img {
+    max-width: 100%;
+}
+
+[role^='button'] {
+    transition: transform ease 0.2s;
+    user-select: none;
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    min-height: 100vh;
+    @include query(lg) {
+        & {
+            padding: 0 10rem;
+        }
+    }
+
+    @include query(xl) {
+        & {
+            padding: 0 16rem;
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 3;
+}
+
+.hide {
+    display: none;
+}

@@ -1,0 +1,93 @@
+.carousel-viewport,
+.swipe-btn-left,
+.swipe-btn-right {
+    grid-area: container;
+}
+
+.carousel-viewport {
+    pointer-events: none;
+    overflow: hidden;
+    & .items {
+        display: flex;
+        position: relative;
+        transition: transform 300ms ease;
+    }
+    & img {
+        position: relative;
+        object-fit: contain;
+        min-width: 100%;
+        user-select: none;
+        z-index: 0;
+        overflow: hidden;
+    }
+}
+
+[class^='swipe-btn'] {
+    width: 30px;
+    height: 30px;
+    margin: 0 1.5rem;
+    z-index: 1;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & img {
+        object-fit: contain;
+        width: 15px;
+        height: 15px;
+    }
+}
+.swipe-btn-left {
+    place-self: center left;
+}
+.swipe-btn-right {
+    place-self: center right;
+}
+
+.thumbnail-container {
+    display: none;
+}
+
+@include query(md) {
+    .carousel-viewport {
+        border-radius: 1.6rem;
+        pointer-events: initial;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    [class^='swipe-btn-'] {
+        display: none;
+    }
+
+    .thumbnail-container {
+        display: block;
+        height: 90px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+        .item-thumbnail {
+            border-radius: 1rem;
+            width: 90px;
+            overflow: hidden;
+            background-color: white;
+            cursor: pointer;
+            &:hover img {
+                opacity: 0.4;
+                transition: opacity ease 0.4s;
+            }
+        }
+        .active {
+            // opacity: 0.4;
+            border: 2px solid $orange-clr;
+        }
+        .active img {
+            opacity: 0.4;
+        }
+    }
+}
+
+@include query(xl) {
+}

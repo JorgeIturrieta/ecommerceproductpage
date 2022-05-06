@@ -1,0 +1,21 @@
+.main {
+    display: grid;
+    grid-template-columns: repeat(12, [col-start] 1fr);
+    & > * {
+        grid-column: col-start / span 12;
+    }
+    padding-bottom: 6rem;
+}
+
+@include query(md) {
+    .main {
+        margin: 2rem 4rem;
+        padding-bottom: 0;
+    }
+}
+
+@include query(xl) {
+    .main {
+        margin: 10rem 4rem;
+    }
+}

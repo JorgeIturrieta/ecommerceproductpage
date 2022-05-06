@@ -1,0 +1,25 @@
+// Fonts size
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+// Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+//Base
+@import 'base/base';
+
+// Components
+
+@import 'components/Header/_header';
+@import 'components/MainContent/mainContent';
+
+// Galery
+@import 'components/MainContent/gallery';
+@import 'components/MainContent/mainGalleryContainer';
+@import 'components/MainContent/mainGalleryLightbox';
+
+// Description
+@import 'components/MainContent/mainDescription';
+
+// Footer
+@import 'components/Footer/footer';

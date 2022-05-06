@@ -1,0 +1,136 @@
+.main__description {
+    padding: $padding-mobile;
+}
+.description-title {
+    text-transform: uppercase;
+    color: $orange-clr;
+    font-size: 1.2rem;
+    margin-top: 3rem;
+    letter-spacing: 0.2rem;
+}
+.description-title-product {
+    font-size: 3rem;
+    font-size: clamp(3rem, 3vw, 4.4rem);
+    margin-top: 1rem;
+}
+.description-product {
+    color: $dark-grayish-blue-clr;
+    font-size: clamp(1.5rem, 4vw, 1.6rem);
+
+    margin-top: 2rem;
+    line-height: 2.4rem;
+}
+.price-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__main-price {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .price {
+        font-size: 3rem;
+        font-weight: 700;
+    }
+    .discount {
+        background-color: $pale-orange-clr;
+        color: $orange-clr;
+        font-weight: 700;
+        font-size: 1.5rem;
+        padding: 4px 5px;
+        border-radius: $border-radius-btn;
+        text-align: center;
+    }
+
+    &__old-price {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: $grayish-blue-clr;
+        text-decoration: line-through;
+    }
+}
+
+.cart-control {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.ammount-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $light-grayish-blue-clr;
+    padding: $padding-btn;
+    border-radius: $border-radius-btn;
+    & span {
+        font-size: 1.6rem;
+        font-weight: 700;
+        user-select: none;
+    }
+    & img {
+        cursor: pointer;
+    }
+}
+.cart-btn {
+    display: flex;
+    background-color: $orange-clr;
+    padding: $padding-btn;
+    border-radius: $border-radius-btn;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    & img {
+        filter: brightness(0) invert(1);
+    }
+    & span {
+        color: white;
+        font-weight: 700;
+        font-size: 1.4rem;
+    }
+}
+
+@include query(md) {
+    .main__description {
+        grid-column: col-start 8 / span 5;
+    }
+    .cart-btn {
+        cursor: pointer;
+        &:hover {
+            opacity: 0.4;
+        }
+    }
+    .price-container {
+        flex-wrap: wrap;
+
+        &__main-price {
+            flex-basis: 100%;
+        }
+        &__old-price {
+            margin-top: 1rem;
+        }
+    }
+}
+
+@include query(xl) {
+    .main__description {
+        margin-top: 3rem;
+        padding: 0;
+    }
+    .cart-control {
+        margin-top: 3rem;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .ammount-container {
+        flex-basis: 40%;
+    }
+    .cart-btn {
+        flex-basis: 60%;
+    }
+}

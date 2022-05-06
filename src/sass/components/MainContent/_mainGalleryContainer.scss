@@ -1,0 +1,17 @@
+.main__gallery {
+    display: grid;
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+    grid-template: 'container' 1fr;
+    place-items: center;
+    place-content: center;
+}
+
+@include query(md) {
+    .main__gallery {
+        grid-column: col-start 1 / span 6;
+        max-height: initial;
+        padding: 0 2.2rem;
+    }
+}
