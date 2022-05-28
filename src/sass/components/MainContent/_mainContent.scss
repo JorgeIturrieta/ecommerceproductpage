@@ -1,6 +1,6 @@
 .main {
     display: grid;
-    grid-template-columns: repeat(12, [col-start] 1fr);
+    grid-template-columns: repeat(13, [col-start] 1fr);
     & > * {
         grid-column: col-start / span 12;
     }
